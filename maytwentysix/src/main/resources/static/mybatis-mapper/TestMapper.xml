@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.maytwentysix.mapper.TestMapper">
+    <select id="findById" resultType="com.example.maytwentysix.entity.User" parameterType="Long" >
+        SELECT * FROM osc WHERE id = #{id};
+    </select>
+    <insert id="saveUser" parameterType="com.example.maytwentysix.entity.User" keyProperty="id" useGeneratedKeys="true">
+		insert into osc (name) values (#{name}); 
+	</insert>
+    <update id="update" >
+        UPDATE osc SET name = #{name} WHERE id = #{id}
+    </update>
+</mapper>
